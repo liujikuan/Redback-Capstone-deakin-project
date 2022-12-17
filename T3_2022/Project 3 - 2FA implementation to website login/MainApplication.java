@@ -1,4 +1,5 @@
 //submitted by Wing Hung Wu
+//reference: https://medium.com/@ihorsokolyk/two-factor-authentication-with-java-and-google-authenticator-9d7ea15ffee6
 
 package edu.deakin.sit764.config;
 
