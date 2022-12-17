@@ -19,7 +19,8 @@ public class MainApplication {
         String barcodeurl = Redback_2FAConfig.getGoogleAuthenticatorBarCode(secretKey, email, company);
         System.out.println(barcodeurl);
         Redback_2FAConfig.createQRCode(barcodeurl, "QRCode.png", 400, 400);
-
+        
+        System.out.println("Please enter the 6 digit code:");
         Scanner scanner = new Scanner(System.in);
         String code = scanner.nextLine();
         if (code.equals(getTOTPCode(secretKey))) {
