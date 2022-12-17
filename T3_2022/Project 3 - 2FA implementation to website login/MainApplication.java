@@ -26,7 +26,7 @@ public class MainApplication {
         if (code.equals(getTOTPCode(secretKey))) {
             System.out.println("Logged in successful");
         } else {
-            System.out.println("Invalid 2FA Code. Please try again");
+            System.out.println("Invalid 2FA Code. Please try again.");
         }
 
     }
