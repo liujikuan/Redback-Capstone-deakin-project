@@ -1,10 +1,5 @@
 //The following dependencies are required to add into the pom.xml in the corresponding maven project
 
-<dependency>
-    <groupId>de.taimos</groupId>
-    <artifactId>totp</artifactId>
-    <version>1.0</version>
-</dependency>
 
 <dependency>
     <groupId>commons-codec</groupId>
@@ -16,4 +11,10 @@
     <groupId>com.google.zxing</groupId>
     <artifactId>javase</artifactId>
     <version>3.2.1</version>
+</dependency>
+
+<dependency>
+    <groupId>de.taimos</groupId>
+    <artifactId>totp</artifactId>
+    <version>1.0</version>
 </dependency>
