@@ -1,5 +1,6 @@
 import com.sun.net.httpserver.HttpServer;
-import config.HttpHandler;
+import config.RegisterHttpHandler;
+import config.VerifyHttpHandler;
 
 import java.io.*;
 import java.net.InetSocketAddress;
@@ -12,7 +13,10 @@ public class MyHttpServer {
         HttpServer server = HttpServer.create(address, 0);
 
         // bind handler
-        server.createContext("/fa", new HttpHandler());
+        server.createContext("/fa", new RegisterHttpHandler());
+        server.setExecutor(null);
+
+        server.createContext("/verify", new VerifyHttpHandler());
         server.setExecutor(null);
         server.start();
     }
