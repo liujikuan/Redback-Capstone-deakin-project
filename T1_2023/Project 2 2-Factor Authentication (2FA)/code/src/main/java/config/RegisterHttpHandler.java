@@ -17,9 +17,6 @@ public class RegisterHttpHandler implements com.sun.net.httpserver.HttpHandler {
     public void handle(HttpExchange exc) throws IOException {
         Map<String, String> params = CommonTools.queryToMap(exc.getRequestURI().getQuery());
         System.out.println("param A=" + params.get("email"));
-//        String response = "This is the reponse";
-//        exc.sendResponseHeaders(200, response.length());
-        // need GET params here
 
         String fileAddr;
         try {
@@ -31,7 +28,6 @@ public class RegisterHttpHandler implements com.sun.net.httpserver.HttpHandler {
         exc.sendResponseHeaders(200, file.length());
         OutputStream out = exc.getResponseBody();
         Files.copy(file.toPath(), out);
-        //out.write(response.getBytes());
         out.close();
     }
 

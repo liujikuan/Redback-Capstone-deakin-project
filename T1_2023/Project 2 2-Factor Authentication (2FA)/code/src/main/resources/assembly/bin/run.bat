@@ -13,4 +13,5 @@ if not defined filename (
 )
 
 set /p port=port:
+echo The selected port is %port%, now start to run "%filename%" application
 java -jar "%filename%" %port%

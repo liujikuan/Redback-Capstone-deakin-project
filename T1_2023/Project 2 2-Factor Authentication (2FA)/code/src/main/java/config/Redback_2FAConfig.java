@@ -57,20 +57,4 @@ public class Redback_2FAConfig {
         }
     }
 
-    public static void infinityGeneratingCodes(String secretKey) {
-        String lastCode = null;
-        while (true) {
-            String code = getTOTPCode(secretKey);
-            if (!code.equals(lastCode)) {
-                System.out.println(code);
-            }
-            lastCode = code;
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {};
-        }
-    }
-
-
-
 }

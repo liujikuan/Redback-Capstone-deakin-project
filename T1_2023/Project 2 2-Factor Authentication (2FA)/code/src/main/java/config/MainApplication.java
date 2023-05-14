@@ -7,9 +7,6 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.Scanner;
 
-import config.Redback_2FAConfig;
-
-
 import static config.Redback_2FAConfig.generateSecretKey;
 import static config.Redback_2FAConfig.getTOTPCode;
 
