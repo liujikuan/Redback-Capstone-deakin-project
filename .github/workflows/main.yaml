@@ -16,8 +16,6 @@ jobs:
       # Step 1: Check out the repository
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          path: '/T1_2023/Project 2 2-Factor Authentication (2FA)/code/src/main/java'
 
       # Step 2: Set up Java environment
       - name: Set up JDK 11
