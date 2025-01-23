@@ -41,5 +41,5 @@ jobs:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_PREFIX }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          SOURCE_DIR: '/home/runner/work/Redback-Capstone-deakin-project/Redback-Capstone-deakin-project/T1_2023/Project\ 2\ 2-Factor\ Authentication\ \(2FA\)/code/target' # Adjust path to where your .jar/.war is built
+          SOURCE_DIR: '/home/runner/work/Redback-Capstone-deakin-project/Redback-Capstone-deakin-project/T1_2023/Project/code/target' # Adjust path to where your .jar/.war is built
 
