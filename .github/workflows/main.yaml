@@ -1,0 +1,47 @@
+name: Build and Deploy 2FA Project
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          path: '/T1_2023/Project 2 2-Factor Authentication (2FA)/code/src/main/java'
+
+      # Step 2: Set up Java environment
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+
+      # Step 3: Build the project (e.g., using Maven)
+      - name: Build with Maven
+        run: |
+          cd '/T1_2023/Project 2 2-Factor Authentication (2FA)/code/src/main/java'
+          mvn clean package
+        env:
+          MAVEN_OPTS: -Xmx1024m
+
+      # Step 4: Upload artifact to AWS S3
+      - name: Deploy artifact to AWS S3
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --acl public-read
+        env:
+          AWS_S3_BUCKET: ${{ secrets.AWS_S3_prefix }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          SOURCE_DIR: /T1_2023/Project\ 2\ 2-Factor\ Authentication\ \(2FA\)/code/src/main/java/target # Adjust path to where your .jar/.war is built
+
